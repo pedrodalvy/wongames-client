@@ -1,8 +1,9 @@
-# Boilerplate for Next.js
+# Front-end da aplicação WON Games, do curso [React Avançado](https://www.udemy.com/course/react-avancado/).
 
-This is a [Next.js](https://nextjs.org/) boilerplate to be used in new React projects.
+Aplicaçao criada com [Next.js](https://nextjs.org/), que simula um e-commerce de
+jogos, incluindo toda a parte de pagamentos e área do cliente.
 
-## Technologies
+## Tecnologias utilizadas
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -10,25 +11,26 @@ This is a [Next.js](https://nextjs.org/) boilerplate to be used in new React pro
 - [Jest](https://jestjs.io/)
 - [React-Testing-Library](https://testing-library.com/)
 - [Storybook](https://storybook.js.org/)
-- [EsLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Husky](https://github.com/typicode/husky)
 
-## Getting Started
+## Instalação
 
-First, run the development server:
+- Clone o repositório do projeto:
+  ```shell
+  git clone https://github.com/pedrodalvy/wongames-client
+  ```
+- Instale as dependências:
+  ```shell
+  cd wongames-client && yarn install
+  ```
 
-```shell
-npm run dev
-# or
-yarn dev
-```
+- Iniciar o projeto com o comando:
+  ```shell
+  yarn dev
+  # or
+  npm run dev
+  ```
 
-Open http://localhost:3000 with your browser to see the result.
-
-You can start editing the page by modifying pages/index.js. The page auto-updates as you edit the file.
-
-## Commands
+## Comandos
 
 - `dev`: runs your application on `localhost:3000`
 - `build`: creates the production build version
@@ -40,7 +42,5 @@ You can start editing the page by modifying pages/index.js. The page auto-update
 - `build-storybook`: create the build version of storybook
 - `generate`: generate a new component
 
-## Create a new app
-```shell
-yarn create next-app --example https://github.com/pedrodalvy/boilerplate-nextjs
-```
+## Back-end
+O projeto com o back-end da aplicaçao encontra-se no repositório [wongames-api](https://github.com/pedrodalvy/wongames-api)
