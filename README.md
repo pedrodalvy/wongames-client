@@ -44,3 +44,8 @@ jogos, incluindo toda a parte de pagamentos e área do cliente.
 
 ## Back-end
 O projeto com o back-end da aplicaçao encontra-se no repositório [wongames-api](https://github.com/pedrodalvy/wongames-api)
+
+
+## Referências
+- Figma do projeto: [Won Games](https://www.figma.com/file/ovvUTvKUFwLzOlU2LNmohM/Won-Games-English?node-id=139%3A0)
+- Curso na Udemy: [React Avançado](https://www.udemy.com/course/react-avancado/)
