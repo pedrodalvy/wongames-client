@@ -23,7 +23,7 @@ describe('<Heading />', () => {
     renderWithTheme(<Heading lineLeft>Won Games</Heading>);
 
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
-      'border-left': '0.7rem solid #3CD3C1',
+      'border-left': '0.7rem solid #F231A5',
     });
   });
 
