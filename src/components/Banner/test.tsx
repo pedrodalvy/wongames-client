@@ -42,4 +42,21 @@ describe('<Banner />', () => {
 
     expect(image).toBeInTheDocument();
   });
+
+  it('should render a Ribbon', () => {
+    renderWithTheme(
+      <Banner
+        {...props}
+        ribbon="Best Seller"
+        ribbonColor="secondary"
+        ribbonSize="small"
+      />
+    );
+
+    const ribbon = screen.getByText(/best seller/i);
+
+    expect(ribbon).toBeInTheDocument();
+    expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' });
+    expect(ribbon).toHaveStyle({ fontSize: '1.2rem', height: '2.6rem' });
+  });
 });
