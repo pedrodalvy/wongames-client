@@ -29,8 +29,7 @@ export const Wrapper = styled.section<WrapperProps>`
       .slick-slide > div {
         margin: 0 ${theme.spacings.xsmall};
       }
-
-      .slick-list > div {
+      .slick-list {
         margin: 0 -${theme.spacings.xsmall};
       }
     `}
@@ -45,7 +44,7 @@ export const Wrapper = styled.section<WrapperProps>`
       width: 2.5rem;
       height: 2.5rem;
       padding: 0;
-      transform: translateY(0, -50%);
+      transform: translate(0, -50%);
     }
 
     .slick-prev {
