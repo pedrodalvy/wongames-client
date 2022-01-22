@@ -1,11 +1,11 @@
 import Highlight, { HighlightProps } from 'components/Highlight';
 import { Meta, Story } from '@storybook/react';
-import item from 'components/Highlight/mock';
+import { makeHighlightMock } from 'components/Highlight/mock';
 
 export default {
   title: 'Highlight',
   component: Highlight,
-  args: { ...item },
+  args: { ...makeHighlightMock({}) },
 } as Meta;
 
 export const Default: Story<HighlightProps> = (args) => (
@@ -21,5 +21,5 @@ export const WithFloatImage: Story<HighlightProps> = (args) => (
 );
 
 WithFloatImage.args = {
-  floatImage: '/img/red-dead-float.png',
+  ...makeHighlightMock({ withFloatImage: true }),
 };

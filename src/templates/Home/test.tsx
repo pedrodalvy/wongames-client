@@ -1,22 +1,21 @@
 import 'match-media-mock';
+import Home from '.';
 import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
-import Home from '.';
-
-import highlightMock from 'components/Highlight/mock';
 import { makeBannersMock } from 'components/BannerSlider/mock';
 import { makeGameCardsMock } from 'components/GameCardSlider/mock';
+import { makeHighlightMock } from 'components/Highlight/mock';
 
 const props = {
   banners: makeBannersMock({ total: 3 }),
   newGames: makeGameCardsMock({ total: 1 }),
-  mostPopularHighlight: highlightMock,
+  mostPopularHighlight: makeHighlightMock({}),
   mostPopularGames: makeGameCardsMock({ total: 1 }),
-  upcommingHighlight: highlightMock,
+  upcommingHighlight: makeHighlightMock({}),
   upcommingGames: makeGameCardsMock({ total: 1 }),
   upcommingMoreGames: makeGameCardsMock({ total: 1 }),
   freeGames: makeGameCardsMock({ total: 1 }),
-  freeGamesHighlight: highlightMock,
+  freeGamesHighlight: makeHighlightMock({}),
 };
 
 describe('<Home />', () => {
