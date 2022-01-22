@@ -3,19 +3,19 @@ import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 import Home from '.';
 
-import gamesMock from 'components/GameCardSlider/mock';
 import highlightMock from 'components/Highlight/mock';
 import { makeBannersMock } from 'components/BannerSlider/mock';
+import { makeGameCardsMock } from 'components/GameCardSlider/mock';
 
 const props = {
   banners: makeBannersMock({ total: 3 }),
-  newGames: [gamesMock[0]],
+  newGames: makeGameCardsMock({ total: 1 }),
   mostPopularHighlight: highlightMock,
-  mostPopularGames: [gamesMock[0]],
+  mostPopularGames: makeGameCardsMock({ total: 1 }),
   upcommingHighlight: highlightMock,
-  upcommingGames: [gamesMock[0]],
-  upcommingMoreGames: [gamesMock[0]],
-  freeGames: [gamesMock[0]],
+  upcommingGames: makeGameCardsMock({ total: 1 }),
+  upcommingMoreGames: makeGameCardsMock({ total: 1 }),
+  freeGames: makeGameCardsMock({ total: 1 }),
   freeGamesHighlight: highlightMock,
 };
 
