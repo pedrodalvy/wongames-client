@@ -9,7 +9,7 @@ import { makeHighlightMock } from 'components/Highlight/mock';
 const props = {
   banners: makeBannersMock({ total: 3 }),
   newGames: makeGameCardsMock({ total: 1 }),
-  mostPopularHighlight: makeHighlightMock({}),
+  mostPopularHighlight: makeHighlightMock({ withFloatImage: true }),
   mostPopularGames: makeGameCardsMock({ total: 1 }),
   upcommingHighlight: makeHighlightMock({}),
   upcommingGames: makeGameCardsMock({ total: 1 }),
