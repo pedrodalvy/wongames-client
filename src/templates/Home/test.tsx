@@ -2,12 +2,13 @@ import 'match-media-mock';
 import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 import Home from '.';
-import bannersMock from 'components/BannerSlider/mock';
+
 import gamesMock from 'components/GameCardSlider/mock';
 import highlightMock from 'components/Highlight/mock';
+import { makeBannersMock } from 'components/BannerSlider/mock';
 
 const props = {
-  banners: bannersMock,
+  banners: makeBannersMock({ total: 3 }),
   newGames: [gamesMock[0]],
   mostPopularHighlight: highlightMock,
   mostPopularGames: [gamesMock[0]],

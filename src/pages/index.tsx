@@ -1,7 +1,7 @@
 import Home, { HomeTemplateProps } from 'templates/Home';
-import bannersMock from 'components/BannerSlider/mock';
 import gamesMock from 'components/GameCardSlider/mock';
 import highlightMock from 'components/Highlight/mock';
+import { makeBannersMock } from 'components/BannerSlider/mock';
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />;
@@ -10,7 +10,7 @@ export default function Index(props: HomeTemplateProps) {
 export function getServerSideProps() {
   return {
     props: {
-      banners: bannersMock,
+      banners: makeBannersMock({ total: 3 }),
       newGames: gamesMock,
       mostPopularHighlight: highlightMock,
       mostPopularGames: gamesMock,

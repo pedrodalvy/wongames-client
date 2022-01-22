@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react';
 import BannerSlider, { BannerSliderProps } from 'components/BannerSlider';
-import items from 'components/BannerSlider/mock';
+import { makeBannersMock } from 'components/BannerSlider/mock';
 
 export default {
   title: 'BannerSlider',
   component: BannerSlider,
-  args: { items },
+  args: { items: makeBannersMock({ total: 3 }) },
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
