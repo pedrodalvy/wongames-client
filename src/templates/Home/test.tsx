@@ -8,28 +8,22 @@ import highlightMock from 'components/Highlight/mock';
 
 const props = {
   banners: bannersMock,
-  newGames: gamesMock,
+  newGames: [gamesMock[0]],
   mostPopularHighlight: highlightMock,
-  mostPopularGames: gamesMock,
+  mostPopularGames: [gamesMock[0]],
   upcommingHighlight: highlightMock,
-  upcommingGames: gamesMock,
-  upcommingMoreGames: gamesMock,
-  freeGames: gamesMock,
+  upcommingGames: [gamesMock[0]],
+  upcommingMoreGames: [gamesMock[0]],
+  freeGames: [gamesMock[0]],
   freeGamesHighlight: highlightMock,
 };
 
 describe('<Home />', () => {
-  it('should render menu and footer', () => {
-    renderWithTheme(<Home {...props} />);
-
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-
-    const footerContacts = screen.getByRole('heading', { name: /contact/i });
-    expect(footerContacts).toBeInTheDocument();
-  });
-
   it('should render the sections', () => {
     renderWithTheme(<Home {...props} />);
+
+    const menu = screen.getByLabelText(/open menu/i);
+    expect(menu).toBeInTheDocument();
 
     const news = screen.getByRole('heading', { name: /news/i });
     expect(news).toBeInTheDocument();
@@ -42,5 +36,17 @@ describe('<Home />', () => {
 
     const freeGames = screen.getByRole('heading', { name: /free games/i });
     expect(freeGames).toBeInTheDocument();
+
+    const footerContacts = screen.getByRole('heading', { name: /contact/i });
+    expect(footerContacts).toBeInTheDocument();
+
+    const allBanners = screen.getAllByText(/defy death/i);
+    expect(allBanners).toHaveLength(3);
+
+    const allCards = screen.getAllByText(/population zero/i);
+    expect(allCards).toHaveLength(5);
+
+    const allHighlights = screen.getAllByText(/read dead it’s back/i);
+    expect(allHighlights).toHaveLength(3);
   });
 });
