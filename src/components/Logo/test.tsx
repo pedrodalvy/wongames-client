@@ -3,6 +3,14 @@ import { renderWithTheme } from 'utils/tests/helpers';
 import Logo from 'components/Logo/index';
 
 describe('<Logo />', () => {
+  it('should render the logo with id passed', () => {
+    const { container } = renderWithTheme(<Logo id="logoId" />);
+
+    const logo = container.querySelector('#paint_linear_logoId');
+
+    expect(logo).toBeInTheDocument();
+  });
+
   it('should render a white label by default', () => {
     renderWithTheme(<Logo />);
 
