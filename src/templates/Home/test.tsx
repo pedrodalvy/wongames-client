@@ -18,35 +18,48 @@ const props = {
   freeGamesHighlight: makeHighlightMock({}),
 };
 
+jest.mock('components/Menu', () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="Mock Menu" />,
+  };
+});
+
+jest.mock('components/Footer', () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="Mock Footer" />,
+  };
+});
+
+jest.mock('components/Showcase', () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="Mock Showcase" />,
+  };
+});
+
+jest.mock('components/BannerSlider', () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="Mock BannerSlider" />,
+  };
+});
+
 describe('<Home />', () => {
   it('should render the sections', () => {
     renderWithTheme(<Home {...props} />);
 
-    const menu = screen.getByLabelText(/open menu/i);
+    const menu = screen.getByTestId('Mock Menu');
     expect(menu).toBeInTheDocument();
 
-    const news = screen.getByRole('heading', { name: /news/i });
-    expect(news).toBeInTheDocument();
+    const banner = screen.getByTestId('Mock BannerSlider');
+    expect(banner).toBeInTheDocument();
 
-    const mostPopular = screen.getByRole('heading', { name: /most popular/i });
-    expect(mostPopular).toBeInTheDocument();
+    const showcase = screen.getAllByTestId('Mock Showcase');
+    expect(showcase).toHaveLength(5);
 
-    const upcomming = screen.getByRole('heading', { name: /upcomming/i });
-    expect(upcomming).toBeInTheDocument();
-
-    const freeGames = screen.getByRole('heading', { name: /free games/i });
-    expect(freeGames).toBeInTheDocument();
-
-    const footerContacts = screen.getByRole('heading', { name: /contact/i });
-    expect(footerContacts).toBeInTheDocument();
-
-    const allBanners = screen.getAllByText(/defy death/i);
-    expect(allBanners).toHaveLength(3);
-
-    const allCards = screen.getAllByText(/population zero/i);
-    expect(allCards).toHaveLength(5);
-
-    const allHighlights = screen.getAllByText(/read dead it’s back/i);
-    expect(allHighlights).toHaveLength(3);
+    const footer = screen.getByTestId('Mock Footer');
+    expect(footer).toBeInTheDocument();
   });
 });
