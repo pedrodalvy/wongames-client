@@ -18,20 +18,6 @@ const props = {
   freeGamesHighlight: makeHighlightMock({}),
 };
 
-jest.mock('components/Menu', () => {
-  return {
-    __esModule: true,
-    default: () => <div data-testid="Mock Menu" />,
-  };
-});
-
-jest.mock('components/Footer', () => {
-  return {
-    __esModule: true,
-    default: () => <div data-testid="Mock Footer" />,
-  };
-});
-
 jest.mock('components/Showcase', () => {
   return {
     __esModule: true,
@@ -47,19 +33,13 @@ jest.mock('components/BannerSlider', () => {
 });
 
 describe('<Home />', () => {
-  it('should render the sections', () => {
+  it('should render banner and showcases', () => {
     renderWithTheme(<Home {...props} />);
-
-    const menu = screen.getByTestId('Mock Menu');
-    expect(menu).toBeInTheDocument();
 
     const banner = screen.getByTestId('Mock BannerSlider');
     expect(banner).toBeInTheDocument();
 
     const showcase = screen.getAllByTestId('Mock Showcase');
     expect(showcase).toHaveLength(5);
-
-    const footer = screen.getByTestId('Mock Footer');
-    expect(footer).toBeInTheDocument();
   });
 });
